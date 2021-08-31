@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class Types_Guide {
 
+
+    // function to print tata types
     public static void allTypes() {
 
         System.out.println("Primitive data types in Java:");
