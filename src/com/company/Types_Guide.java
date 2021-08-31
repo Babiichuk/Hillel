@@ -52,18 +52,17 @@ public class Types_Guide {
         System.out.println("To start testing input s, to read more about data types input ? or q to exit program");
     }
 
-    public static void questionBlock(int inScores, int correctAnswer) {
+    public static void questionBlock(int inScores, String correctAnswer) {
 
         Scanner scanAnswer = new Scanner(System.in);
         String userAnswer = scanAnswer.nextLine();
         if (userAnswer.equals(correctAnswer)) {
             System.out.println("Correct!");
             inScores = inScores + 10;
-            System.out.println("You've got " + inScores + " %");
         } else {
             System.out.println("Wrong!");
-            System.out.println("You've got " + inScores + " %");
         }
+        System.out.println("You've got " + inScores + " %");
     }
 
     public static void typeTest() {
@@ -112,8 +111,10 @@ public class Types_Guide {
             String startTest = scanTypes.nextLine();
             if (startTest.equals("s")) {
                 typeTest();
-               // questionBlock(scores);
+               questionBlock(scores, "2");
 
+                typeTest();
+                questionBlock(scores, "1");
             } else if (startTest.equals("?")) {
                 allTypes();
                 String typeInput = scanTypes.nextLine();
