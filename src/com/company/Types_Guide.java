@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class Types_Guide {
 
-
     // function to print tata types
     public static void allTypes() {
 
@@ -67,18 +66,26 @@ public class Types_Guide {
         System.out.println("You've got " + inScores + " %");
     }
 
-    public static void typeTest() {
+    public static void typeTest(String question1, String question2, String question3 ) {
         System.out.println("Input number of correct statement");
         System.out.println(" ");
-        System.out.println("1");
-        System.out.println("2");
-        System.out.println("3");
+        System.out.println(question1);
+        System.out.println(question2);
+        System.out.println(question3);
         System.out.println(" ");
 
     }
 
 
     public static void main(String[] args) {
+        String[] correctAnswers = {"2","1","2","3","1","3","1","2"};
+
+        String[][] testQuestions = new String [8][3];
+        testQuestions [0][0] = "Byte has maximum value 115 and minimum value -114 ";
+        testQuestions [0][1] = "Byte has maximum value 115 and minimum value -114 ";
+        testQuestions [0][2] = "Byte has maximum value 115 and minimum value -114 ";
+
+
         int scores = 0;
         String typeByte;
         String typeShort;
@@ -112,10 +119,10 @@ public class Types_Guide {
             System.out.println("To start testing input s, to read more about data types input ? or q to exit program");
             String startTest = scanTypes.nextLine();
             if (startTest.equals("s")) {
-                typeTest();
-               questionBlock(scores, "2");
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+               questionBlock(scores, correctAnswers[0]);
 
-                typeTest();
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
                 questionBlock(scores, "1");
             } else if (startTest.equals("?")) {
                 allTypes();
