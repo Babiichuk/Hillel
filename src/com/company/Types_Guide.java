@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Types_Guide {
 
-    // function to print tata types
+    // function to show data types
     public static void allTypes() {
 
         System.out.println("Primitive data types in Java:");
@@ -53,17 +53,20 @@ public class Types_Guide {
         System.out.println("To start testing input s, to read more about data types input ? or q to exit program");
     }
 
-    public static void questionBlock(int inScores, String correctAnswer) {
+    public static int questionBlock(int inScores, String correctAnswer) {
 
         Scanner scanAnswer = new Scanner(System.in);
         String userAnswer = scanAnswer.nextLine();
+
         if (userAnswer.equals(correctAnswer)) {
             System.out.println("Correct!");
             inScores = inScores + 10;
+
         } else {
             System.out.println("Wrong!");
         }
-        System.out.println("You've got " + inScores + " %");
+        // System.out.println("You've got " + inScores + " %");
+return inScores;
     }
 
     public static void typeTest(String question1, String question2, String question3 ) {
@@ -119,11 +122,34 @@ public class Types_Guide {
             System.out.println("To start testing input s, to read more about data types input ? or q to exit program");
             String startTest = scanTypes.nextLine();
             if (startTest.equals("s")) {
-                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
-               questionBlock(scores, correctAnswers[0]);
+
 
                 typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
-                questionBlock(scores, "1");
+               scores = questionBlock(scores, correctAnswers[0]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[1]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[2]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[3]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[4]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[5]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[6]);
+
+                typeTest(testQuestions [0][0], testQuestions [0][1],testQuestions [0][2]);
+                scores = questionBlock(scores, correctAnswers[7]);
+
+                System.out.println("You've got " + scores + " %");
+
             } else if (startTest.equals("?")) {
                 allTypes();
                 String typeInput = scanTypes.nextLine();
